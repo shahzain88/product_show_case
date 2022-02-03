@@ -1,0 +1,28 @@
+footer{
+	color: lightgray;
+	text-align: center;
+	margin: 10px;
+	padding: 5px; 
+}
+
+
+footer > div{
+	text-align: center;
+	margin: 0 auto;
+	padding: 5px;
+	max-width: 400px;
+	max-height: 30px;
+	justify-content: center;
+	border-top: 2px solid #0cde9c1c;
+
+}
+
+footer > div > p{
+	margin: auto 10px;
+}
+
+
+
+
+
+

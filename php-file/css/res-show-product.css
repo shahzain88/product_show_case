@@ -1,0 +1,13 @@
+.show-product .product div a.btn{
+	display: block;
+	margin-bottom: 5px;
+}
+
+/*
+@media only screen and (max-width: 620px) {
+
+	.show-product .product div p.author{
+		margin:0; 
+	}
+
+}*/

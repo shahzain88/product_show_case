@@ -1,0 +1,24 @@
+.error{
+    border: 1px solid #ff0000;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 10px;
+    background: #ff77774d;
+    color: red;
+    text-align: center;
+}
+/*
+.error span{
+	font-size: 22px;
+	margin-left: 15px;
+	margin-right: 10px;
+	padding: 3px 10px;
+	color:black;
+	font-family: none;
+}
+
+*/
+.errDisNone{
+    display: none;
+}

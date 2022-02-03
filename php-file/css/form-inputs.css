@@ -1,0 +1,81 @@
+.create{
+	text-align: center;
+	margin:0 auto;
+}
+
+
+.create .form-title {
+    font-size: 25px;
+    color: #947fe687;
+    letter-spacing: 4px;
+    text-shadow: 0 0 3px #947fe6, 0 0 5px #0cde9c, 0 0 10px #0cde9c, 0 0 21px #0cde9c, 0 0 30px #0cde9c, 0 0 42px #0cde9c, 0 0 82px #0cde9c, 0 0 92px #0cde9c, 0 0 102px #0cde9c, 0 0 151px #0cde9c;
+    width: 120px;
+    margin: 30px auto;
+    margin-bottom: 40px;
+}
+
+.create form{
+	display: inline-block;
+	width: 600px;
+}
+
+
+.create form img,
+.create form label,
+.create form input,
+.create form textarea{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-family: Georgia, serif;
+
+}
+
+.create form img{
+	width: 100px;
+	border: 2px solid #0cde9c1c;
+	padding: 40px;
+}
+
+.create form #imgInp{
+	display: none;
+}
+
+
+
+body > div > form > label.imgLab{
+	font-size: 35px;
+	font-weight: 1000;
+	color: #0cde9c;
+	border: 2px dotted #0cde9c;
+	max-width: 40px;
+	margin: 0 auto;
+	position: static !important;
+	padding: 10px;
+
+}
+
+
+.create form input{
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #0cde9c;
+	border-right: 2px solid #0cde9c;
+	padding: 20px;
+	width: 350px;
+	font-size: 20px;
+}
+
+.create form textarea{
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #0cde9c;
+	border-right: 2px solid #0cde9c;
+	padding: 20px;
+	font-size: 20px;
+	width: 350px;
+}
+
+
+
+

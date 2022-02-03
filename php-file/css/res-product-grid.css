@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1114px) {
+
+	div.products{
+	  grid-template-columns: auto auto;
+	}
+
+}
+
+@media only screen and (max-width:740px) {
+
+	div.products{
+	  display: block;
+
+	}
+
+	a.product{
+		display: block;
+		max-width: calc(100% - 20px);
+		margin-bottom: 20px;
+		border: 4px solid #0cde9c1c;
+
+	}
+
+	.imgOut img{
+		max-width: 100%;
+	}
+
+
+}

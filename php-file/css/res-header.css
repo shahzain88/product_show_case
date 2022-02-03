@@ -1,0 +1,48 @@
+body{
+	max-width: 100%;
+}
+
+@media only screen and (max-width: 520px) {
+
+
+
+	nav form{
+		display: block;
+		margin: 30px;
+	}
+
+	.navbar > .img-link{
+		position: absolute;
+		top: 30px;
+		left: 0px;
+	}
+
+	body > nav > a.btn{
+		position: absolute;
+		right: 5px;
+		top: 5px;
+	}
+
+
+	body > nav > form{
+
+		position: absolute;
+		right: 0;
+		top: 50px;
+		margin: 0;
+
+	}
+
+	.navbar{
+		min-height: 100px;
+	}
+	nav{
+		position: -webkit-sticky;
+	  	position: sticky;
+	 	top: 0px;
+	  	padding: 5px;
+	  	background-color: #ffffffe8;
+	}
+
+
+}
