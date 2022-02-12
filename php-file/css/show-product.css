@@ -25,10 +25,6 @@
 	max-height: 400px; 
 }
 .show-product .product .imgOut img:hover{
-	position: relative;
-	left: -40px;
-	max-width: 900px;
-	max-height: 550px; 
 	box-shadow: 9px 9px 20px 2px gray;
 }
 
