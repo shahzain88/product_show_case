@@ -1,7 +1,8 @@
 
 
 
-<?php 
+<?php
+require_once "../db.php";
 $id = '';
 if ($_SERVER["REQUEST_METHOD"] ==='GET') {
 	if (isset($_GET['sure'])) {
@@ -11,7 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] ==='GET') {
 				$id= (int)htmlspecialchars($_GET["id"]);
 				echo "1";
 				echo "$id";
-				$pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+				// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+				$db = new DB();
+				$pdo = $db->connect();
 				$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				$qState = $pdo->prepare("DELETE FROM products WHERE products.id = :id");
 				$qState->bindvalue(":id",$id);

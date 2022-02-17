@@ -1,9 +1,12 @@
 <?php 
 $prods=null;
+require_once "../db.php";
 
 if (is_null($searched_prods)) {
 	// grt product data from db 
-	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+	// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+	$db = new DB();
+	$pdo = $db->connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	$qState = $pdo->prepare("SELECT * FROM products");
 	$qState->execute();

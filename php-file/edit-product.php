@@ -5,6 +5,8 @@
 	$_SESSION['title'] = "edit product";
 	$today = date("Y/n/j");
 	require './temp/header.php';
+	require_once "../db.php";
+	
 
 $id='';
 $price= '';
@@ -108,7 +110,9 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
 		
 
 		if (empty($errors)) {
-			$pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+			// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+			$db = new DB();
+			$pdo = $db->connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			$qState = $pdo->prepare("UPDATE products SET price=:price,img=:img, title=:title , the_desc=:the_desc, author=:author, date=:the_date WHERE products.id = :id");

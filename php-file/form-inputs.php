@@ -5,6 +5,8 @@
 	$_SESSION['title'] = "create product";
 	$today = date("Y/n/j");
 	require './temp/header.php';
+	require_once "../db.php";
+
 	$the_date = $today;
  ?>
 
@@ -99,7 +101,9 @@ if ($_SERVER["REQUEST_METHOD"]==="POST") {
 		
 
 		if (empty($errors)) {
-			$pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+			// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+			$db = new DB();
+			$pdo = $db->connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			$qState = $pdo->prepare('INSERT INTO products (img, title, price , the_desc, author,date) VALUES (:img, :title, :price,:the_desc , :author ,:the_date)');

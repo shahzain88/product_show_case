@@ -1,11 +1,14 @@
 <?php 
+require_once "../db.php";
 
 $searched_prods= null;
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
 	if(isset($_GET['query'])){
 		$query = htmlspecialchars($_GET['query']);
 		$query = "%" . $query ."%";
-		$pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+		// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+		$db = new DB();
+		$pdo = $db->connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		$qState = $pdo->prepare("SELECT * FROM products WHERE title LIKE :q OR the_desc LIKE :q OR author LIKE :q OR date LIKE :q OR price LIKE :q");
 		$qState->bindvalue(':q',$query);

@@ -3,13 +3,16 @@
 
 session_start();
 
+require_once "../db.php";
 
 
 $prod = '';
 if ($_SERVER["REQUEST_METHOD"] ==='GET') {
 	if (isset($_GET['id'])) {
 		$id= (int)$_GET['id'];
-		$pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+		// $pdo = new PDO('mysql:host=localhost;port=3306;dbname=my-php-site-store;','root','');
+		$db = new DB();
+		$pdo = $db->connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		$qState = $pdo->prepare("SELECT id, img, title, price, the_desc, author, date FROM products WHERE id = :id");
 		$qState->bindvalue(":id",$id);

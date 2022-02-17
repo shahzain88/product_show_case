@@ -13,19 +13,19 @@ class DB
 
 	// debug mode db config
 	// to go to host mode db congig change the db_configs data to your configuration data
-	public	String $host;
+	private	String $host;
 	private String $port;
 	private String $dbname;
 	private String $un;
 	private String $up;
 
-	public function connact($debug=True)
+	public function connect($debug=True)
 	{
 		if($debug){
 			// on debug = true local mode
 			$this->host = "localhost";
-			$this->prot = "3306";
-			$this->dbname = "your mysql db name";
+			$this->port = "3306";
+			$this->dbname = "my-php-site-store";
 			$this->un = "root";
 			$this->up = "";
 			return $this->get_pdo();
@@ -44,16 +44,17 @@ class DB
 
 	private function get_pdo()
 	{
-		$pattern = "/^[0-9]$/";
+		$pattern = "/^[0-9]{0,}$/";
 		$pdo;
-		$is_port = preg_match($pattern, $this->prot);
+		$is_port = preg_match($pattern, $this->port);
+		// echo("is_port?". $is_port . " ". $this->port);
 		if ( $is_port) {
 			$pdo = new PDO("mysql:host={$this->host};port={$this->port};dbname={$this->dbname};",$this->un,$this->up);
-			echo("local");
+			// echo(" local ");
 			return $pdo;
 		}else{
 			$pdo = new PDO("mysql:host={$this->host};dbname={$this->dbname};",$this->un,$this->up);
-			echo("online");
+			// echo(" online ");
 			return $pdo;
 
 
@@ -66,11 +67,11 @@ class DB
 
 
                
-$pdo = new DB();
-$pdo = $pdo->connact();
-echo "<pre>";
-var_dump($pdo);
-echo "</pre>";
+// $pdo = new DB();
+// $pdo = $pdo->connect();
+// echo "<pre>";
+// var_dump($pdo);
+// echo "</pre>";
 
 
 
