@@ -31,7 +31,7 @@ class DB
 			return $this->get_pdo();
 		}else{
 			// on debug = false hosting mode;
-			$this->host = "us-cdbr-east-05.cleardb";
+			$this->host = "us-cdbr-east-05.cleardb.net";
 			$this->port = "your port";
 			$this->dbname = "heroku_b004bd4fb85c8f7";
 			$this->un = "b9572f7f3e03ec";
