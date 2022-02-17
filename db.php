@@ -19,7 +19,7 @@ class DB
 	private String $un;
 	private String $up;
 
-	public function connect($debug=True)
+	public function connect($debug=false)
 	{
 		if($debug){
 			// on debug = true local mode
@@ -31,11 +31,11 @@ class DB
 			return $this->get_pdo();
 		}else{
 			// on debug = false hosting mode;
-			$this->host = "your online hosted mysql";
+			$this->host = "us-cdbr-east-05.cleardb";
 			$this->port = "your port";
-			$this->dbname = "your dbname";
-			$this->un = "your username";
-			$this->up = "your pass word";
+			$this->dbname = "heroku_b004bd4fb85c8f7";
+			$this->un = "b9572f7f3e03ec";
+			$this->up = "3647b0df";
 			return $this->get_pdo();
 
 		}
